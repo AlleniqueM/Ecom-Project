@@ -1,0 +1,56 @@
+<div class="shop-container">
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <h3 class="sidebar-title">Sort Products</h3>
+      <div class="sort-options">
+        <div *ngFor="let option of sortOptions" class="sort-option">
+          <input type="radio"
+                 name="sort"
+                 [id]="option.value"
+                 [value]="option.value"
+                 [(ngModel)]="selectedSort"
+                 (change)="onSortChange()">
+          <label [for]="option.value">{{option.label}}</label>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <main class="product-area">
+    <h2 class="shop-title">Our Products</h2>
+
+    <div class="product-card" *ngFor="let product of filteredProducts" (click)="viewProductDetails(product)">
+      <div class="product-image-container">
+        <img [src]="product.imageUrl"
+             [alt]="product.name"
+             class="product-image"
+             (error)="handleImageError($event)">
+      </div>
+      <div class="product-info">
+        <h3 class="product-name">{{product.name}}</h3>
+        <p class="product-price">{{product.price | currency}}</p>
+      </div>
+    </div>
+  </main>
+
+  <div class="product-details" *ngIf="selectedProduct">
+    <div class="details-container">
+      <button class="close-btn" (click)="selectedProduct = null">×</button>
+      <div class="details-image-container">
+        <img [src]="selectedProduct.imageUrl"
+             [alt]="selectedProduct.name"
+             class="details-image"
+             (error)="handleImageError($event)">
+      </div>
+      <div class="details-info">
+        <h2>{{selectedProduct.name}}</h2>
+        <p class="details-price">{{selectedProduct.price | currency:'USD':'symbol':'1.2-2'}}</p>
+        <p class="details-description">{{selectedProduct.description}}</p>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+</div>

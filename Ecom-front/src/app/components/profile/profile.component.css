@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+ margin: 20px;
+ box-sizing: border-box;
+}
+main {
+  margin-top: 25px;
+}
+.profile-grid {
+  display: grid;
+  grid-template-columns: 220px auto;
+  grid-template-rows: 700px;
+  max-height: 40%;
+  overflow: hidden;
+  border: 1px solid gray;
+
+}
+
+.account-info {
+  display:  flex;
+  flex-direction: column;
+  padding: 1rem;
+  justify-items: start;
+  height:100%;
+
+}
+.profmenu {
+  max-width: 200px;
+  overflow: hidden;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid gray;
+}
+.profmenu li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  width:200px;
+  list-style: none;
+  cursor: pointer;
+  border-bottom: 1px solid gray;
+
+}
+
+.profmenu li button {
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.profmenu li:hover{
+  background-color: rgba(216, 203, 168, 0.562);
+}
+.profmenu li:last-child {
+  margin-top: 425px;
+  border-top: 1px solid gray;
+  margin-bottom: 0px;
+}
+.account-info  div{
+  margin-bottom: 50px;
+  font-weight: bolder;
+}
+.account-info span {
+  margin: 12px;
+  font-size: 12px;
+}
+.account-info button {
+  margin-top: 30px;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: rgb(255, 211, 175);
+}
+.account-info button:hover{
+  background-color: rgb(240, 191, 102);
+}
+
+.hidden {
+  display: none;
+}

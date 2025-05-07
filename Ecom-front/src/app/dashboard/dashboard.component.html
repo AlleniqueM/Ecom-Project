@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="sidebar">
+            <h2>Admin Panel</h2>
+
+            <div class="menu-section">
+                <h4>Management</h4>
+                <div class="menuItem"><a routerLink="products">Products</a></div>
+                <div class="menuItem"><a routerLink="orders">Orders</a></div>
+                <div class="menuItem"><a routerLink="users">Users</a></div>
+              </div>
+
+
+              <div class="menu-section" style="margin-top: 30px;">
+                <h4>System</h4>
+                <div class="menu-item">Settings</div>
+                <div class="menu-item">Logs</div>
+              </div>
+              <button (click)="logout()">Logout</button>
+        </div>
+        <div class="main-content">
+          <div class="header">
+            <ng-container *ngIf="currentUser$ | async as user">
+              <h1>Welcome back, {{ user?.first_name || 'Admin' }}</h1>
+            </ng-container>
+          </div>
+
+        <div id="content-section">
+                <div class="card">
+                    <h3>Dashboard Overview</h3>
+                    <p>Select a section from the sidebar to begin.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,87 @@
+<div class="about-page">
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1>Noor Al-Shama</h1>
+      <p class="tagline">Illuminating Middle Eastern Homes Since 2012</p>
+    </div>
+  </section>
+
+  <section class="story-section">
+    <div class="container">
+      <h2>Our Story</h2>
+      <div class="story-grid">
+        <div class="story-text">
+          <p>Founded in the heart of Dubai's Al Fahidi district, Noor Al-Shama began as a small workshop crafting traditional date wax candles for local mosques and households. Our name, meaning "Light of the Candle" in Arabic, reflects our deep connection to regional lighting traditions.</p>
+
+          <p>During the 2015 Gulf fragrance boom, we pioneered the fusion of premium paraffin wax with rare regional ingredients like Omani frankincense, Emirati saffron, and Qatari oud. This innovation earned us the 2018 Middle East Home Fragrance Award.</p>
+
+          <p>Today, we operate sustainable production facilities in Dubai and Jeddah, supplying over 500 luxury retailers across the GCC while maintaining our commitment to traditional craftsmanship.</p>
+        </div>
+        <div class="story-image">
+          <div class="image-placeholder"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="values-section">
+    <div class="container">
+      <h2>Our Principles</h2>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">☪️</div>
+          <h3>Cultural Authenticity</h3>
+          <p>Each scent tells a story from our region's rich heritage, approved by our Board of Traditional Perfumers</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌱</div>
+          <h3>Sustainable Sourcing</h3>
+          <p>We use solar-powered production and ethically source 92% of ingredients within the Middle East</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🕯️</div>
+          <h3>Artisan Quality</h3>
+          <p>Every candle undergoes 7 quality checks by our master craftsmen in Dubai</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>Meet Our Masha'al</h2>
+      <p class="section-subtitle">(The Torchbearers)</p>
+      <div class="team-grid">
+        <div class="team-card" *ngFor="let member of teamMembers">
+          <div class="team-image {{member.image}}"></div>
+          <h3>{{member.name}}</h3>
+          <p class="role">{{member.role}}</p>
+          <p class="bio">{{member.bio}}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="craft-section">
+    <div class="container">
+      <h2>The Noor Al-Shama Craft</h2>
+      <div class="craft-steps">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Wax Blending</h3>
+          <p>Our proprietary date wax blend is prepared in temperature-controlled vats for optimal burn</p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Scent Infusion</h3>
+          <p>Fragrance oils are hand-mixed using traditional tahneej (steeping) techniques</p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Hand-Pouring</h3>
+          <p>Artisans pour wax at precisely 62°C into vessels made by regional glassblowers</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

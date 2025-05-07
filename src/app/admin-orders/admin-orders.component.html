@@ -1,0 +1,73 @@
+<app-back-button class="back-button"></app-back-button>
+<div class="main-content-wrapper">
+<div class="order-management">
+  <header class="order-header">
+    <h2 class="order-title">Order Dashboard</h2>
+    <div class="order-count">{{orders.length}} orders</div>
+  </header>
+
+  <div class="order-list">
+    <div class="order-list-header">
+      <div class="col-id">Order ID</div>
+      <div class="col-status">Status</div>
+      <div class="col-date">Date</div>
+      <div class="col-total">Total</div>
+      <div class="col-actions">Actions</div>
+    </div>
+
+    <div class="order-item" *ngFor="let order of orders" [class.selected]="selectedOrder?.id === order.id">
+      <div class="col-id">
+        <span class="order-id-label">#{{order.id }}</span>
+      </div>
+      <div class="col-status">
+        <span class="status-badge" [class]="order.status">{{order.status}}</span>
+      </div>
+      <div class="col-date">
+        <span class="date">{{order.date }}</span>
+        <span class="time">{{order.date }}</span>
+      </div>
+      <div class="col-total">
+        <span class="total-amount">${{order.total }}</span>
+      </div>
+      <div class="col-actions">
+        <button class="view-btn" (click)="viewOrder(order.id)">Details</button>
+        <button class="cancel-btn" (click)="cancelOrder(order.id)" *ngIf="order.status !== 'cancelled'">
+          Cancel
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="order-detail-panel" *ngIf="selectedOrder">
+    <div class="panel-header">
+      <h3>Order Details</h3>
+      <button class="close-btn" (click)="selectedOrder = null">
+        <svg width="16" height="16" viewBox="0 0 24 24">
+          <path fill="currentColor" d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z"/>
+        </svg>
+      </button>
+    </div>
+
+    <div class="detail-section">
+      <div class="detail-row">
+        <span class="detail-label">Order ID:</span>
+        <span class="detail-value">{{selectedOrder.id}}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Status:</span>
+        <span class="detail-value status-badge" [class]="selectedOrder.status">
+          {{selectedOrder.status}}
+        </span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Date:</span>
+        <span class="detail-value">{{selectedOrder.date }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">Total:</span>
+        <span class="detail-value">${{selectedOrder.total }}</span>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

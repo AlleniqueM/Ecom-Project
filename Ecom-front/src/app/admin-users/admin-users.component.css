@@ -1,0 +1,177 @@
+.user-management-container {
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eaeaea;
+}
+
+.management-title {
+  display: flex;
+  align-items: center;
+  font-size: 1.75rem;
+  color: #2c3e50;
+  margin: 0;
+}
+
+.user-icon {
+  width: 32px;
+  height: 32px;
+  margin-right: 12px;
+  color: #4a6baf;
+}
+
+.total-users {
+  display: flex;
+  align-items: center;
+}
+
+.pill-badge {
+  background: #f0f4ff;
+  color: #4a6baf;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.table-container {
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.user-table th {
+  background: #f8f9fa;
+  padding: 16px 20px;
+  text-align: left;
+  font-weight: 600;
+  color: #495057;
+  border-bottom: 2px solid #e9ecef;
+}
+
+.user-table td {
+  padding: 16px 20px;
+  border-bottom: 1px solid #e9ecef;
+  vertical-align: middle;
+}
+
+.user-row:hover {
+  background-color: #f8f9fa;
+}
+
+.header-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+  vertical-align: middle;
+  color: #6c757d;
+}
+
+.user-id {
+  font-family: 'Roboto Mono', monospace;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.avatar-placeholder {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #4a6baf;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-weight: 600;
+}
+
+.user-email {
+  color: #495057;
+}
+
+.role-badge {
+  display: inline-block;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.role-badge.admin {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.role-badge.user {
+  background: #e8f5e9;
+  color: #388e3c;
+}
+
+.user-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s;
+}
+
+.promote-btn {
+  background: #e3f2fd;
+  color: #1976d2;
+}
+
+.promote-btn:hover {
+  background: #bbdefb;
+}
+
+.delete-btn {
+  background: #ffebee;
+  color: #d32f2f;
+  padding: 8px;
+}
+
+.delete-btn:hover {
+  background: #ffcdd2;
+}
+
+.trash-icon {
+  width: 18px;
+  height: 18px;
+}

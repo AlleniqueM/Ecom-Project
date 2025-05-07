@@ -1,0 +1,38 @@
+# General
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+
+# Node
+/node_modules/
+npm-debug.log
+yarn-error.log
+
+# Angular
+/dist/
+/tmp/
+/out-tsc/
+/.angular/cache
+
+# Environments
+/environments/*
+!/environments/environment.prod.ts
+!/environments/environment.ts
+
+# Coverage
+/coverage
+
+# Logs
+/logs
+*.log
+
+# System Files
+*.pid
+*.seed
+*.pid.lock

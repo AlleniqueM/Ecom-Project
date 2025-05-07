@@ -1,0 +1,277 @@
+:root {
+  --primary: #8B5A2B; /* Rich amber */
+  --secondary: #E6D5B8; /* Creamy candle wax */
+  --accent: #C4A484; /* Earthy Middle Eastern tone */
+  --text: #3E2723; /* Deep brown */
+  --light: #FFF9F0; /* Soft ivory */
+  --shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+.about-page {
+  font-family: 'Poppins', 'Amiri', sans-serif;
+  color: var(--text);
+  line-height: 1.7;
+  max-width: 1400px;
+  margin: 0 auto;
+  overflow-x: hidden;
+}
+
+/* Modern Hero Section */
+.hero-section {
+  background: linear-gradient(to bottom right, #E6D5B8, #8B5A2B);
+  background: linear-gradient(rgba(0,0,0,0.3), center/cover no-repeat);
+  height: 20vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 5% 5%;
+  position: relative;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero-content h1 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 300;
+  margin: 0;
+  color: white;
+  letter-spacing: 1px;
+  font-family: 'Amiri', serif;
+}
+
+.tagline {
+  font-size: clamp(1rem, 2vw, 1.5rem);
+  letter-spacing: 3px;
+  color: var(--secondary);
+  margin-top: 1rem;
+  display: inline-block;
+  border-bottom: 2px solid var(--secondary);
+  padding-bottom: 0.5rem;
+}
+
+/* Section Styling */
+.section {
+  padding: 6rem 5%;
+  position: relative;
+}
+
+.section:nth-child(even) {
+  background: var(--light);
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Modern Grid Layouts */
+.story-grid,
+.values-grid,
+.team-grid,
+.craft-steps {
+  display: grid;
+  gap: 2.5rem;
+}
+
+.story-grid {
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.values-grid {
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.team-grid {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.craft-steps {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* Cards & Components */
+.value-card,
+.team-card,
+.step {
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  box-shadow: var(--shadow);
+  transition: transform 0.3s ease;
+}
+
+.value-card:hover,
+.team-card:hover {
+  transform: translateY(-8px);
+}
+
+.value-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--primary);
+}
+
+.team-image {
+  height: 280px;
+  width: 100%;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 1.5rem;
+  filter: grayscale(20%);
+  transition: filter 0.3s ease;
+}
+
+.team-card:hover .team-image {
+  filter: grayscale(0%);
+}
+
+.step-number {
+  background: var(--primary);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 0 auto 1.5rem;
+}
+
+/* Typography */
+h2 {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: var(--primary);
+  margin-bottom: 3rem;
+  position: relative;
+  display: inline-block;
+  font-family: 'Amiri', serif;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: var(--accent);
+}
+
+.section-subtitle {
+  font-style: italic;
+  color: var(--accent);
+  margin-top: -2rem;
+  margin-bottom: 3rem;
+  text-align: center;
+  display: block;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+  .story-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .craft-steps {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .section {
+    padding: 4rem 5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    height: 60vh;
+    align-items: center;
+    text-align: center;
+  }
+
+  .tagline {
+    border-bottom: none;
+  }
+}
+
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-image {
+  height: 300px;
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+  object-fit: cover;
+  background-position: center;
+}
+
+.team-fatima {
+  background-image: url('../../assets/images/team-fatima.png');
+}
+
+.team-khalid {
+  background-image: url('../../assets/images/team-khalid.png');
+}
+
+.team-layla {
+  background-image: url('../../assets/images/team-layla.png');
+}
+
+.craft-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin: 50px 0;
+}
+
+.step {
+  text-align: center;
+  position: relative;
+  padding-top: 60px;
+}
+
+.step-number {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #8d6e63;
+  color: white;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .story-grid,
+  .values-grid,
+  .team-grid,
+  .craft-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+}
+

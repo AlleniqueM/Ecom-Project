@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+</head>
+<body>
+  <p> User Component Works! </p>
+  <nav>
+    <ul>
+      <li *ngfor="let user of users">{{ user.first_name }}</li>
+    </ul>
+  </nav>
+</body>
+</html>

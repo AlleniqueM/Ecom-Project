@@ -1,0 +1,45 @@
+
+  <app-back-button class="back-button"></app-back-button>
+
+<div class="admin-products">
+  <h2>{{ isEditing ? 'Edit Product' : 'Add Product' }}</h2>
+
+  <form (ngSubmit)="onSubmit()">
+    <div>
+      <label>Name*:</label>
+      <input type="text" [(ngModel)]="productData.name" name="name" required>
+    </div>
+
+    <div>
+      <label>Price*:</label>
+      <input type="number" [(ngModel)]="productData.price" name="price" required>
+    </div>
+
+    <div>
+      <label>Description:</label>
+      <textarea [(ngModel)]="productData.description" name="description"></textarea>
+    </div>
+
+    <div>
+      <label>Image URL:</label>
+      <input type="text" [(ngModel)]="productData.imageUrl" name="imageUrl">
+    </div>
+
+    <div>
+      <label>Category:</label>
+      <input type="text" [(ngModel)]="productData.category" name="category">
+    </div>
+
+    <button type="submit">{{ isEditing ? 'Update' : 'Add' }}</button>
+    <button type="button" (click)="resetForm()" *ngIf="isEditing">Cancel</button>
+  </form>
+
+  <h2>Product List</h2>
+  <div *ngFor="let product of products" class="product-item">
+    <h3>{{ product.name }} - ${{ product.price }}</h3>
+    <p>{{ product.description }}</p>
+    <img [src]="product.imageUrl" width="100" *ngIf="product.imageUrl">
+    <button (click)="onEdit(product)">Edit</button>
+    <button (click)="onDelete(product)">Delete</button>
+  </div>
+</div>

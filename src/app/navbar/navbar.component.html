@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div class="navbar" *ngIf="shouldShowNavbar()">
+    <div class="grid-item">
+      <a [routerLink]="'/home'" id="logo-svg">L</a>
+    </div>
+    <div class="shopping-menu-grid">
+      <nav class="navMenu">
+        <ul class="navLinks">
+          <li>
+            <a [routerLink]="'/shop'">Shop</a>
+            <ul class="dropdown">
+              <li><a [routerLink]="'/shop/candles'">Scented Candles</a></li>
+              <li><a [routerLink]="'/shop/unscented'">Unscented Candles</a></li>
+              <li><a [routerLink]="'/shop/decorative'">Decorative Candles</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a [routerLink]="'/about'">About</a>
+            <ul class="dropdown">
+              <li><a [routerLink]="'/about/story'">Our Story</a></li>
+              <li><a [routerLink]="'/about/process'">Our Process</a></li>
+              <li><a [routerLink]="'/about/team'">Our Team</a></li>
+            </ul>
+          </li>
+
+          <li><a [routerLink]="'/collections'">Collections</a></li>
+          <li><a [routerLink]="'/contactUs'">Contact Us</a></li>
+          <div *ngIf="isLoggedIn" class="user-info">
+            <a class="welcome-message" [routerLink]="'/profile'">Hello, {{ userName }}</a>
+          </div>
+        </ul>
+        <button *ngIf="!isLoggedIn" (click)="showLoginForm()" class="login-signup">Login|SignUp</button>
+
+        <div class="modal-overlay" *ngIf="showLoginPopup">
+          <div class="close-btn" (click)="closeModal()">x</div>
+          <div class="modal-box">
+            <app-login-signup close="hideLoginForm()"></app-login-signup>
+          </div>
+        </div>
+      </nav>
+    </div>
+    <div class="search-and-cart">
+      <div class="search-bar">
+        <input type="text"
+               class="search-input"
+               placeholder="Search"
+               [(ngModel)]="searchTerm"
+               (keyup.enter)="onSearch()"
+               (input)="onSearchInput()">
+        <button class="search-submit" (click)="onSearch()">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+
+        <!-- Search results dropdown -->
+<!-- Inside your search-bar div -->
+<div class="search-results" *ngIf="showResults">
+  <div *ngIf="searchResults.length > 0; else noResults">
+    <div *ngFor="let product of searchResults"
+         class="result-item"
+         (click)="navigateToProduct(product)">
+      <img [src]="product.imageUrl || 'assets/default-product.jpg'"
+           class="result-image">
+      <div class="result-info">
+        <div class="result-name">{{product.name}}</div>
+        <div class="result-price">{{product.price | currency}}</div>
+      </div>
+    </div>
+  </div>
+  <ng-template #noResults>
+    <div class="no-results">No products found</div>
+  </ng-template>
+</div>
+      </div>
+      <a [routerLink]="'/cart'" id="cart-icon"><i class="fa-solid fa-cart-shopping" style="color: #d77009;"></i></a>
+    </div>
+  </div>
+</body>
+</html>
