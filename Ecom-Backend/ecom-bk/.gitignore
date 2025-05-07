@@ -1,0 +1,32 @@
+# Unused files etc...
+ecom-bk/models/paypal.js
+ecom-bk/models/paypals.js
+
+ecom-bk/routes/paypal.js
+ecom-bk/routes/paymentRoutes
+# Node 
+/node_modules
+npm-debug.log
+yarn-error.log
+
+# IDEs and editors
+.idea/
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# Visual Studio Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
+# secret
+.env
+node_modules
+logs/

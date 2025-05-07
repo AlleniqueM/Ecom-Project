@@ -1,0 +1,28 @@
+Documenting my way through this project.
+
+CRUD shows up in multiple places across the board, in products, users, orders, and so on. This is a good example of how a single concept can be applied in multiple contexts. The CRUD acronym is a good example of a concept that is both simple and powerful.
+
+Products / Reading / Piping images to the frontend. / pipe ts
+Users
+Carts
+Orders
+Addresses
+Profile Information
+Paypal Integration
+Reviews / This would be a great piping operation to get all the reviews for a product. 
+
+
+// Admin Priviledges
+
+CRUD Products 
+CRUD Reviews 
+CRUD Users 
+CRUD Orders // After it is made.
+
+Backend: 
+Google Maps, Paypal API => Integration + Services
+Sessions => Authentication, Authorization
+
+Express, Node.js => Angular Services Pipes.
+
+

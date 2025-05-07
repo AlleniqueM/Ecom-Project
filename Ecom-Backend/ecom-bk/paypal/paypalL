@@ -1,0 +1,27 @@
+const paypalC = require('../paypal/paypalC');
+const Order = require('../models/orders');
+
+exports.createOrder = async (req, res) => {
+    const { cart } = req.body;
+    const request = new paypalC.orders.OrdersCreateRequest();
+
+    request.requestBody({
+        intent: 'CAPTURE', 
+        purchase_units: [{
+            amount: { currency_code: 'USD', value: cart.total },
+        }],
+    });
+
+    try {
+        const paypalOrder = await paypalClient().execute(request);
+        const dbOrder = await Order.create({
+            user: request.user.user_id,
+            paypalId: paypalOrder.result.id, 
+            status: 'PENDING',
+            items: cart.items,
+        });
+        res.json({ paypalOrder, dbOrder});
+    } catch (error) {
+        res.status(500).json({ error: err.message });
+    }
+};
