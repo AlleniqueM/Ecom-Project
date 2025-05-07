@@ -12,4 +12,4 @@ Built with Angular
 Backend 
 Node.js, Express
 
-s
+They are tied to their respective branches. 
